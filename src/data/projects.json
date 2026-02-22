@@ -1,0 +1,8 @@
+[
+  { "id": "honeycomb", "name": "HONEYCOMB", "subtitle": "injection-molded lip balm containers", "year": 2024, "color": "#e8c47a", "image": null },
+  { "id": "silversmithing", "name": "SILVERSMITHING", "subtitle": "jewelry gallery", "year": 2024, "color": "#b0b0b0", "image": null },
+  { "id": "lobster", "name": "LOBSTER", "subtitle": "injection-molded magnets", "year": 2024, "color": "#e85d4a", "image": null },
+  { "id": "flow", "name": "FLOW", "subtitle": "desktop tranquility fountain", "year": 2023, "color": "#7ab5e8", "image": null },
+  { "id": "lotus", "name": "LOTUS", "subtitle": "paint tool organizer", "year": 2022, "color": "#e8a0c4", "image": null },
+  { "id": "coming-soon", "name": "coming soon", "subtitle": "", "year": null, "color": "#c4c4c4", "image": null }
+]

@@ -5,3 +5,4 @@
 - **UI Quality**: Focus on aesthetic and responsive UI. Ensure components work well across different screen sizes and maintain visual consistency with the app's design system. 
 - **Compactness**: Bias towards keeping UI components compact, maximizing what can fit on the page. 
 - **Component Organization**: Bias towards not creating new component files. Only extract to a separate file if the component is used (or can be used) in more than 3 files. Otherwise, keep components inline in the file where they're used, especially if only used in one file. Still abstract into components for clarity, just keep them in the same file.
+- **Image Granularity**: Images and text should be in as granular units as possible — individual images with HTML text captions, not composite PNGs with baked-in text. This keeps the site responsive and flexible.

@@ -1,0 +1,235 @@
+{
+  "id": "honeycomb",
+  "heroColor": "#e8c47a",
+  "heroImage": "/images/honeycomb/hero.png",
+  "title": { "main": "HONEYCOMB", "sub": "injection-molded lip balm containers" },
+  "subtitle": "For my injection-molding final project, I designed honeycomb-inspired lip balm containers :D",
+  "skills": [
+    "Designing for manufacturing (DFM)",
+    "Computer-aided design (CAD) - Autodesk Fusion 360",
+    "Computer-aided manufacturing (CAM)",
+    "Computer-numeric control (CNC): milling",
+    "Injection-molding",
+    "Flow simulation"
+  ],
+  "specs": { "type": "Individual project", "duration": "4 weeks" },
+  "relatedProjects": ["lobster", "flow", "lotus"],
+  "sections": [
+    { "type": "pill", "number": "01", "label": "Define + Ideate" },
+    { "type": "heading", "main": "Ideation" },
+    {
+      "type": "text",
+      "body": [
+        { "p": "Since injection-molding is a process intended for mass-production, I chose a direction where multiples of my product, put together, would form a cohesive pattern. I took examples from patterns found in nature, and I converged on honeycomb due how the hexagonal shapes elegantly interfaced with each other." },
+        { "p": "I chose lip balm containers because they included several features that would challenge me:" },
+        { "ul": ["Lip and groove", "Clasp/mating feature", "Living hinge", "And overall, complex features on a small-scaled part."] },
+        { "p": "Inspired by makeup compacts, I added a mirror insert to the design as well." }
+      ]
+    },
+    { "type": "heading", "main": "Engineering constraints and req." },
+    {
+      "type": "text",
+      "body": [
+        { "p": "Injection-molding is a process that can quickly mass-produce; however, there are several constraints not only for the product itself, but for the creation of its negative: the mold inserts." },
+        { "bold": "Requirements", "after": ":" },
+        { "ul": [
+          "Mold design must fit within specified envelope",
+          "Maximum mold insert area is 3x5in",
+          "Mold insert thickness (bottom to top of counterbores) must be either 1.376 in (normal) or 0.701in (thin)",
+          "If ejector pins are used, they must fit through a machined ejector plate and existing ejector pin holes in the mold."
+        ]}
+      ]
+    },
+    { "type": "image", "layout": "full", "count": 1, "height": 465, "src": "/images/honeycomb/overview.png" },
+
+    { "type": "pill", "number": "02", "label": "Prototype + Test" },
+    { "type": "heading", "main": "CAD Model", "accent": "Prototyping and iterations" },
+    {
+      "type": "content",
+      "layout": "two-col",
+      "left": {
+        "body": [
+          { "p": "When designing my container, there were several features I had to implement:" },
+          { "ol": [
+            { "bold": "Living hinge", "text": " between top and bottom half" },
+            { "bold": "Lip and groove", "text": " to allow smooth mating of lid/bottom halves" },
+            { "bold": "Snap-fit/clasp", "text": " that allows the two halves to securely close" },
+            { "bold": "Insert feature", "text": " for a mirror acrylic insert in the lid" },
+            { "bold": "Draft", "text": " for walls to aid ejection" },
+            { "bold": "Consistent wall thickness", "text": " (0.1in)" },
+            { "bold": "Sufficient height", "text": " for lip balm" }
+          ]},
+          { "p": "I iterated through three 3d-printed prototypes -->" },
+          { "p": "I also made dimension changes to the living hinge, lip/groove, and draft angle based on available tooling and DFM guidelines." }
+        ]
+      },
+      "right": {
+        "images": [
+          { "label": "I", "srcs": ["/images/honeycomb/proto-i-1.png", "/images/honeycomb/proto-i-2.png"], "notes": [
+            { "text": "✓ lip and groove", "color": "#15a437" },
+            { "text": "-- living hinge → too narrow", "color": "#ffc421" },
+            { "text": "✕ clasp → too fragile", "color": "#ee3939" }
+          ]},
+          { "label": "II", "srcs": ["/images/honeycomb/proto-ii-1.png", "/images/honeycomb/proto-ii-2.png"], "notes": [
+            { "text": "✓ lip and groove", "color": "#15a437" },
+            { "text": "✓ living hinge - elongated", "color": "#15a437" },
+            { "text": "✕ clasp → stronger, but won't close", "color": "#ee3939" }
+          ]},
+          { "label": "III", "srcs": ["/images/honeycomb/proto-iii.png"], "notes": null }
+        ]
+      }
+    },
+    { "type": "image", "layout": "full", "count": 1, "height": 350, "src": "/images/honeycomb/cad-annotated.png" },
+    { "type": "heading", "main": "CAD Model", "accent": "Final design" },
+    { "type": "image", "layout": "full", "count": 1, "height": 729, "src": "/images/honeycomb/final-cad.png" },
+
+    { "type": "heading", "main": "Flow Simulations", "accent": "Gate-and-runner optimization" },
+    {
+      "type": "text",
+      "body": [{ "p": "I used flow simulations to drive my mold design, specifically for gate locations, number of gates, and gate sizing." }]
+    },
+    {
+      "type": "content",
+      "layout": "two-col",
+      "left": {
+        "body": [
+          { "bold": "Flow Simulation I:" },
+          { "p": "I initially chose one of the clasps as the gate location, because I wanted the plastic to flow along the movement of the living hinge to make it as strong as possible. However, simulation results showed concerning fill quality at the farther half of the box, and ironically at the living hinge." },
+          { "p": "Otherwise, the part would fully fill, and the direction of fill was linear. There weren't any significant sink marks, air traps, or weld lines. I expected there to be slight sink where the honey drip design on the lid would be, and near where the mirror edge would be, since the plastic would be thicker in those areas, but simulation didn't indicate significant areas above the threshold of 0.06mm depth." },
+          { "p": "Due to fill quality issues, my next set of simulations utilized dual, symmetric gates." }
+        ]
+      },
+      "right": { "src": "/images/honeycomb/flow-sim-1.png" }
+    },
+    {
+      "type": "content",
+      "layout": "two-col",
+      "left": { "src": "/images/honeycomb/flow-sim-2.png" },
+      "right": {
+        "body": [
+          { "bold": "Flow Simulations II/III:" },
+          { "p": "Adding a gate location to the other half of the box allowed the box to fill much more uniformly, with good fill quality at the living hinge." },
+          { "p": "The new challenge would be a weld line. Since my newest CAD design was relatively symmetrical, I did not want the two flows of plastic to meet at the middle, where the living hinge was, which would weaken the feature despite fill quality." },
+          { "p": "So, for my third simulation, instead of two 1/4in runners, I slightly reduced the size of the right runner to 3/16in diameter. This would force the plastic to flow more slowly on that side and meet the left flow of plastic at a location, slightly right offset, from the living hinge." },
+          { "p": "Besides the weld line, the difference in fill quality, sink marks, and air traps were not significant between the second and third simulations, and no issues were raised with those metrics." }
+        ]
+      }
+    },
+
+    { "type": "heading", "main": "Mold Insert", "accent": "Iterations and challenges" },
+    {
+      "type": "text",
+      "body": [
+        { "bold": "Mold Iteration I" },
+        { "p": "I took the negative of my CAD model, created the CAM strategy, and machined my first mold, but the A-side and B-side would not fit together. Due to tool and machining tolerances, the pocket on the A side was ~0.012in tighter than the respective extrusion on the B-side. Additionally, I had designed my mold to have a vertical wall shut-off." },
+        { "p": "While I could increase the dimensions of the pocket, I could not change the width of the pocket where the clasps were. Therefore, to ensure a good fit between the A and B-side inserts, despite tolerances, I incorporated sliding shut-offs." },
+        { "p": "For a sliding shut-off, the two sides of the inserts would have complementary 3 degree and -3 degree tapers at the pocket area. This way, even with dimensional differences, the mold would securely slide into place with the right amount of pressure." }
+      ]
+    },
+    { "type": "image", "layout": "full", "count": 1, "height": 400, "src": "/images/honeycomb/mold-shutoff.png" },
+    { "type": "image", "layout": "full", "count": 1, "height": 600, "src": "/images/honeycomb/mold-iteration-1.png" },
+
+    {
+      "type": "text",
+      "body": [
+        { "bold": "Mold Iteration II" },
+        { "p": "With sliding shut-offs incorporated, the A and B sides fit together. However, the initial shot got stuck in the mold. I needed ejector pins to push the part out. I added 4 ejector pin bosses to the B-side of my mold design and machined a corresponding ejector plate." }
+      ]
+    },
+    { "type": "image", "layout": "full", "count": 1, "height": 400, "src": "/images/honeycomb/mold-iteration-2.png" },
+    {
+      "type": "text",
+      "body": [
+        { "bold": "Mold Iteration III" },
+        { "p": "With ejector pins, the part successfully ejected. However, the ejector pins left marks on the part. I re-positioned the ejector pins to hidden locations (underneath the lip) and fine-tuned ejection settings." }
+      ]
+    },
+
+    { "type": "heading", "main": "Mold Insert", "accent": "Final design" },
+    { "type": "image", "layout": "full", "count": 1, "height": 698, "src": "/images/honeycomb/final-mold.png" },
+
+    { "type": "heading", "main": "Final CAM Strategy", "accent": "A-side" },
+    { "type": "image", "layout": "full", "count": 1, "height": 500, "src": "/images/honeycomb/cam-a.png" },
+    { "type": "heading", "main": "Final CAM Strategy", "accent": "B-side" },
+    { "type": "image", "layout": "full", "count": 1, "height": 500, "src": "/images/honeycomb/cam-b.png" },
+    { "type": "heading", "main": "Final CAM Strategy", "accent": "Ejector plate" },
+    { "type": "image", "layout": "full", "count": 1, "height": 445, "src": "/images/honeycomb/ejector-plate-cam.png" },
+
+    { "type": "heading", "main": "Machining", "accent": "Mold" },
+    { "type": "image", "layout": "full", "count": 1, "height": 500, "src": "/images/honeycomb/machining-mold.png" },
+
+    { "type": "heading", "main": "Machining", "accent": "Ejector pins" },
+    { "type": "image", "layout": "3-col", "images": [
+      { "src": "/images/honeycomb/ep-arburg.png", "label": "Mold removed from Arburg" },
+      { "src": "/images/honeycomb/ep-pin-length.png", "label": "Ejector pin length marked" },
+      { "src": "/images/honeycomb/ep-vise.png", "label": "Ejector pin set-up in vise" }
+    ]},
+    { "type": "image", "layout": "3-col", "images": [
+      { "src": "/images/honeycomb/ep-angle-grinder.png", "label": "Cutting ejector pin with angle-grinder" },
+      { "src": "/images/honeycomb/ep-final-pins.png", "label": "Final ejector pins" },
+      { "src": "/images/honeycomb/ep-final-setup.png", "label": "Set-up with ejector plate, mold inserts, and acrylic mirror" }
+    ]},
+
+    { "type": "heading", "main": "Injection-molding", "accent": "Set-up" },
+    { "type": "image", "layout": "4-col", "images": [
+      { "src": "/images/honeycomb/setup-init.png", "label": "Initialized Honeycomb.arb and set-up parameters" },
+      { "src": "/images/honeycomb/setup-ejector.png", "label": "Removed mold and set ejector system into place" },
+      { "src": "/images/honeycomb/setup-replace.png", "label": "Replace mold into Arburg and set mold inserts in place" },
+      { "src": "/images/honeycomb/setup-ready.png", "label": "Ejector system works! Ready to start debugging!" }
+    ]},
+    {
+      "type": "text",
+      "body": [
+        { "bold": "Material:", "after": " Polypropylene (PP)" },
+        { "ul": [
+          "Polypropylene is ideal for living hinges.",
+          "It is also considered food-safe/safe for storing food, which is important since I will be storing lip balm (applied to mouth area)"
+        ]},
+        { "bold": "Colors:", "after": " Yellow, gold, beige" },
+        { "ul": [
+          "I initially imagined making a rainbow spectrum of colors, but setting up and removing ejector pins took far longer than expected (45-50 min of molding for each two hour block), and I would be lucky to mold 5-6 good parts per session. Different colors also molded and flowed differently. So, I focused on yellow/brown-orange/gold shades."
+        ]}
+      ]
+    },
+
+    { "type": "heading", "main": "Injection-molding", "accent": "Debugging" },
+    { "type": "image", "layout": "full", "count": 1, "height": 500, "src": "/images/honeycomb/debugging.png" },
+    {
+      "type": "text",
+      "body": [
+        { "p": ">> Initial shots: Honeycomb began getting increasingly filled. Honeycomb volume is 0.741 in^3 with gate and runner, and I increased to ~1.2 to 1.25 in^3" },
+        { "p": ">> Insert issues: Since the insert was not secure, plastic would flow underneath it, and it kept popping off. So, no plastic would mold over it, and the ejector pins punched through the thin plastic over the boss." },
+        { "p": ">> Fixing ejector pin settings: I decreased ejector pin advancement to 0.9 in, and I added a cooling delay of 10 sec so the plastic hardened more before ejection." },
+        { "p": ">> Fixing insert adherence issues: I placed a silicone chunk over the insert to ensure that adding pressure on the insert would work, which left a large hole as expected. Then I used double-sided tape which fixed the insert issue and also prevented the ejector pins from scratching the surface of the mirror acrylic." },
+        { "p": ">> Fixing fill issues: Middle of the part would not fill, despite sufficient volume. I fixed this by adding holding time with first stage: 0.1s and second stage: 0.5s I increased part volume to 1.25 in^3." },
+        { "p": ">> Fixing flash: Lots of flash! Fixed by increasing clamping force to 45N" },
+        { "p": ">> The successful final product! Fully-filled and functional part with mirror insert, no flash, and no visual defects." }
+      ]
+    },
+
+    { "type": "pill", "number": "03", "label": "Final product" },
+    {
+      "type": "text",
+      "body": [
+        { "bold": "Successes!" },
+        { "ul": [
+          { "bold": "Weld line", "text": ": Appeared as in simulation - just past the living hinge - and did not compromise fill integrity" },
+          { "bold": "Lip and groove", "text": ": Both sides fit together, aesthetically pleasing" },
+          { "bold": "Clasps", "text": ": Securely interfaced with a satisfying click" },
+          { "bold": "Mirror insert", "text": ": Secure in the top half of the container with a clean \"honey drip\" edge" },
+          { "bold": "Overall functionality", "text": ": The container can hold lip balm and other small items with no issues." }
+        ]},
+        { "p": "And of course, multiples (x11) were created in various colors." },
+        { "bold": "Future considerations", "after": ":" },
+        { "ul": [
+          { "bold": "Gate-and-runner location", "text": ": Trimming the gate-and-runner was a bit challenging as it entered one of the clasps, which was spherical shaped. I could explore alternative entry locations, such as from below the part, so that any trimming could be hidden." },
+          { "bold": "Set-up for multiple parts at once", "text": ": Injection-molding multiples (of multiples) would require additional gates and runners. I could create a symmetrical system of gate and runners that feed from the central sprue." },
+          { "bold": "Lip balm applicator", "text": ": I had originally considered injection-molding a honey dipper lip balm applicator, designed to fit in the lid along the mirror edge. Due to time constraints, I 3d-printed them instead." }
+        ]}
+      ]
+    },
+    { "type": "image", "layout": "full", "count": 1, "height": 600, "src": "/images/honeycomb/final-annotated.png" },
+    { "type": "image", "layout": "full", "count": 1, "height": 493, "src": "/images/honeycomb/final-showcase.png" },
+    { "type": "ending", "text": "honeycomb | the end!" }
+  ]
+}
